@@ -12,7 +12,8 @@ namespace AspNetAbandondedCartTest.Data.EntityConfigurations
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
             builder.Property(x => x.FirstName).IsRequired().HasMaxLength(50);
-            builder.Property(x => x.LastName).IsRequired().HasMaxLength(50);
+            builder.Property(x => x.LastName).IsRequired().HasMaxLength(50);///
+            builder.Property(x => x.LastLoginDate).HasColumnType("DateTime").HasDefaultValue(DateTime.Now);
         }
     }
 }
