@@ -3,6 +3,7 @@ using AspNetAbandondedCartTest.Core.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,9 +20,9 @@ namespace AspNetAbandondedCartTest.Data.Repositories
             get { return Context as DataContext; }
         }
 
-        public Task<IEnumerable<CartItem>> GetCartItemsByCartId(string cartId)
+        public async Task<IEnumerable<CartItem>> GetCartItemsByCartId(string cartId)
         {
-            throw new NotImplementedException();
+            return await DataContext.CartItems.Where(x => x.CartId == Guid.Parse(cartId)).ToListAsync();
         }
     }
 }

@@ -8,11 +8,11 @@ namespace AspNetAbandondedCartTest.Core.Services
 {
     public interface ICartItemService
     {
-        Task<CartItem> AddToCart(Cart cart);
-        Task<CartItem> UpdateItemInCart(Cart cartToUpdate, Cart cart);
-        Task DeleteItemInCart(Cart cartToUpdate, Cart cart);
+        Task<CartItem> AddToCart(CartItem cartItem);
+        Task<CartItem> UpdateItemInCart(CartItem cartItemToUpdate, CartItem cartItem);
+        Task DeleteItemInCart(CartItem cartItem);
         Task<IEnumerable<CartItem>> GetCartItems(string cartId);
-        Task<IEnumerable<CartItem>> GetCartItem(int cartItemId);
+        Task<CartItem> GetCartItem(int cartItemId);
         Task RemoveAllCartItems(IEnumerable<CartItem> cartItems);
     }
 }
