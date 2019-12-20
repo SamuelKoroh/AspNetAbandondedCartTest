@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetAbandondedCartTest.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetAbandondedCartTest.Data", "AspNetAbandondedCartTest.Data\AspNetAbandondedCartTest.Data.csproj", "{618680D9-EC0A-4B4F-BB10-3B2FA9E418B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetAbandondedCartTest.Service", "AspNetAbandondedCartTest.Service\AspNetAbandondedCartTest.Service.csproj", "{4B7902CF-D5C2-4A1D-99FA-03D25D243D94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetAbandondedCartTest.Service", "AspNetAbandondedCartTest.Service\AspNetAbandondedCartTest.Service.csproj", "{4B7902CF-D5C2-4A1D-99FA-03D25D243D94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetAbandondedCartTest.Configuration", "AspNetAbandondedCartTest.Configuration\AspNetAbandondedCartTest.Configuration.csproj", "{8110CB96-5036-4911-A455-ADDDA28B4010}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{4B7902CF-D5C2-4A1D-99FA-03D25D243D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B7902CF-D5C2-4A1D-99FA-03D25D243D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B7902CF-D5C2-4A1D-99FA-03D25D243D94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8110CB96-5036-4911-A455-ADDDA28B4010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8110CB96-5036-4911-A455-ADDDA28B4010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8110CB96-5036-4911-A455-ADDDA28B4010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8110CB96-5036-4911-A455-ADDDA28B4010}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

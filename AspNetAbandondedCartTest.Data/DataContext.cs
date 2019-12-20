@@ -16,9 +16,13 @@ namespace AspNetAbandondedCartTest.Data
 
         }
 
+        public DbSet<Cart> Carts { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new CustomerConfiguration());
+            builder.ApplyConfiguration(new CartConfiguration());
+            builder.ApplyConfiguration(new CartItemConfiguration());
+            builder.ApplyConfiguration(new ProductConfiguration());
             base.OnModelCreating(builder);
         }
     }

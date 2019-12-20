@@ -1,4 +1,5 @@
 ﻿using AspNetAbandondedCartTest.Core.Models;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,8 +9,11 @@ namespace AspNetAbandondedCartTest.Core.Services
 {
     public interface IAuthService
     {
-        Task<Customer> RegisterAsync(Customer customer);
-        Task<Customer> LoginAsync(string email, string password);
-        Task<string> GetUserToken(Customer customer);
+        Task<IdentityResult> RegisterAsync(Customer customer, string password);
+        Task<Customer> FindCustomerByEmailAsync(string email);
+        Task<bool> VerifyCustomerPasswordAsync(Customer customer, string password);
+
+        Task UpdateLastLoginDate(Customer customer);
+        string GetUserToken(Customer customer);
     }
 }

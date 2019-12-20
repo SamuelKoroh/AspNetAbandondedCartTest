@@ -4,14 +4,16 @@ using AspNetAbandondedCartTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AspNetAbandondedCartTest.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191219221653_CartProductModels")]
+    partial class CartProductModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,25 +45,21 @@ namespace AspNetAbandondedCartTest.Data.Migrations
 
             modelBuilder.Entity("AspNetAbandondedCartTest.Core.Models.CartItem", b =>
                 {
+                    b.Property<string>("CartId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<Guid>("CartId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
-
-                    b.HasIndex("CartId");
-
-                    b.HasIndex("ProductId");
+                    b.HasKey("CartId", "ProductId");
 
                     b.ToTable("CartItems");
                 });
@@ -93,7 +91,7 @@ namespace AspNetAbandondedCartTest.Data.Migrations
                     b.Property<DateTime>("LastLoginDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DateTime")
-                        .HasDefaultValue(new DateTime(2019, 12, 20, 5, 48, 12, 488, DateTimeKind.Local).AddTicks(4656));
+                        .HasDefaultValue(new DateTime(2019, 12, 19, 23, 16, 52, 585, DateTimeKind.Local).AddTicks(2259));
 
                     b.Property<string>("LastName")
                         .IsRequired()
@@ -311,21 +309,6 @@ namespace AspNetAbandondedCartTest.Data.Migrations
                     b.HasOne("AspNetAbandondedCartTest.Core.Models.Customer", "Customer")
                         .WithMany("Cart")
                         .HasForeignKey("CustomerId");
-                });
-
-            modelBuilder.Entity("AspNetAbandondedCartTest.Core.Models.CartItem", b =>
-                {
-                    b.HasOne("AspNetAbandondedCartTest.Core.Models.Cart", "Cart")
-                        .WithMany("CartItems")
-                        .HasForeignKey("CartId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AspNetAbandondedCartTest.Core.Models.Product", "Product")
-                        .WithMany("CartItems")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

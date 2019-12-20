@@ -4,14 +4,16 @@ using AspNetAbandondedCartTest.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AspNetAbandondedCartTest.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20191220044437_CartProductCartItemNavigation")]
+    partial class CartProductCartItemNavigation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,7 +95,7 @@ namespace AspNetAbandondedCartTest.Data.Migrations
                     b.Property<DateTime>("LastLoginDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DateTime")
-                        .HasDefaultValue(new DateTime(2019, 12, 20, 5, 48, 12, 488, DateTimeKind.Local).AddTicks(4656));
+                        .HasDefaultValue(new DateTime(2019, 12, 20, 5, 44, 36, 930, DateTimeKind.Local).AddTicks(3736));
 
                     b.Property<string>("LastName")
                         .IsRequired()
